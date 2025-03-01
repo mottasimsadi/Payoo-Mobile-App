@@ -4,8 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
+    <!-- DaisyUI & Tailwind CSS CDN Script -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <h1>Main Page</h1>
+<body class="bg-slate-100">
+    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200">
+        <header>
+            <nav class="flex justify-around items-center">
+                <img class="w-16" src="assets/Group.png" alt="">
+                <div>
+                    <h1 class="text-xl font-bold">$45000</h1>
+                    <p class="border rounded p-1">Available Balance</p>
+                </div>
+                <button class="btn">Logout</button>
+            </nav>
+            <section class="mt-10 p-4">
+                <h1 class="text-2xl font-bold mb-2">Welcome to Payooo!</h1>
+                <p>Enjoy easy and convenient financial services with us. Cashout charge is low and</p>
+            </section>
+
+            <div class="cards grid grid-cols-3 mt-14 gap-2">
+                <div class="box cursor-pointer border p-4 text-center rounded-lg">
+                    <img class="w-8 mx-auto" src="assets/wallet1.png" alt="">
+                    <h3>Add Money</h3>
+                </div>
+                <div class="box cursor-pointer border p-4 text-center rounded-lg">
+                    <img class="w-8 mx-auto" src="assets/send1.png" alt="">
+                    <h3>Cash Out</h3>
+                </div>
+                <div class="box cursor-pointer border p-4 text-center rounded-lg">
+                    <img class="w-8 mx-auto" src="assets/money1.png" alt="">
+                    <h3>Transfer Money</h3>
+                </div>
+                <div class="box cursor-pointer border p-4 text-center rounded-lg">
+                    <img class="w-8 mx-auto" src="assets/bonus1.png" alt="">
+                    <h3>Get Bonus</h3>
+                </div>
+                <div class="box cursor-pointer border p-4 text-center rounded-lg">
+                    <img class="w-8 mx-auto" src="assets/purse1.png" alt="">
+                    <h3>Pay Bill</h3>
+                </div>
+                <div class="box cursor-pointer border p-4 text-center rounded-lg">
+                    <img class="w-8 mx-auto" src="assets/transaction1.png" alt="">
+                    <h3>Transactions</h3>
+                </div>
+            </div>
+
+            <section>
+                <h2>Add Money</h2>
+                <div class="">
+                    <div class="hero-content flex-col lg:flex-row-reverse">
+                        <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                            <form class="card-body">
+                                <legend>Select A Bank</legend>
+                                <select class="select">
+                                    <option disabled selected>Select</option>
+                                    <option value="bKash">bKash</option>
+                                    <option value="Nagad">Nagad</option>
+                                    <option value="DBBL">DBBL</option>
+                                </select>
+                                <fieldset class="fieldset">
+                                    <label class="fieldset-label">Mobile Number</label>
+                                    <input value="01301301302" id="mobile-number" type="number" class="input" placeholder="Enter your number"
+                                        required />
+                                    <label class="fieldset-label">4 digit Pin</label>
+                                    <input value="1234" id="pin-number" type="password" class="input" placeholder="Enter 4 Digit Pin" required />
+                                    <button id="btn-add-money" class="btn border-none btn-neutral bg-blue-700 mt-4">Add Money</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+    </section>
+    
 </body>
 </html>
