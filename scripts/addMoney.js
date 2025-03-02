@@ -31,11 +31,29 @@ document
 
     const mainBalance = getInnerTextById("main-balance");
 
+    if (amount < 0) {
+      alert("Negative number can not be added. Use positive number.")
+      return;
+    }
+
     if (amount && pin) {
       if (mobile.length === 11) {
         if (pin === 1234) {
-          const sum = mainBalance + amount;
-          setInnerTextByIdAndValue("main-balance", sum);
+          const total = mainBalance + amount;
+          setInnerTextByIdAndValue("main-balance", total);
+
+          // Add to Transaction History
+          const transactionContainer = document.getElementById(
+            "transaction-container"
+          );
+          const div = document.createElement("div");
+          div.classList.add("bg-white", "p-4", "my-4", "shadow", "rounded-lg");
+          div.innerHTML = `
+                <h4 class="text-xl font-bold">Add Money</h4>
+                <p>Added: ${amount} Tk. New Balance: ${total}</p>
+                <p class="text-emerald-400 text-sm">Transaction Date: ${new Date().toLocaleString()}</p>
+            `;
+          transactionContainer.appendChild(div);
         } else {
           alert("Enter valid pin");
         }
